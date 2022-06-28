@@ -6,8 +6,8 @@ from truncatehtml import truncate
 
 
 def _generate_url_from_repo(repo):
-    url = f'https://cookbooks.projectpythia.org/{repo}/README.html'
-    return url
+    cookbook_url = f'https://cookbooks.projectpythia.org/{repo}/README.html'
+    return cookbook_url
 
 
 def _generate_github_url_from_repo(repo):
@@ -96,7 +96,7 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
     for item in items:
         repo = item['repo']
         #thumbnail = _get_thumbnail_url(repo)
-        url = _generate_url_from_repo(repo)
+        cookbook_url = _generate_url_from_repo(repo)
         status_badges = _generate_status_badge_html(repo)
 
         if not item.get('thumbnail'):
@@ -152,7 +152,7 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
 {institutions_str}
 <p class="my-2">{item['description']}</p>
 <p class="my-2">{tags}</p>
-<p class="mt-3 mb-0"><a href="{url}" class="btn btn-outline-primary btn-block">Visit Website</a></p>
+<p class="mt-3 mb-0"><a href="{cookbook_url}" class="btn btn-outline-primary btn-block">Visit Website</a></p>
 </div>
 </div>
 """
@@ -167,7 +167,7 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
 <div class="d-flex gallery-card">
 <img src="{thumbnail}" class="gallery-thumbnail" />
 <div class="container">
-<a href="{item["url"]}" class="text-decoration-none"><h4 class="display-4 p-0">{item["title"]}</h4></a>
+<a href="{cookbook_url}" class="text-decoration-none"><h4 class="display-4 p-0">{item["title"]}</h4></a>
 <p class="card-subtitle">{authors_str}<br/>{institutions_str}</p>
 <p class="my-2">{short_description}</p>
 </div>
