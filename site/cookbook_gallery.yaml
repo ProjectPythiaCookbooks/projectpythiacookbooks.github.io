@@ -11,14 +11,3 @@
     packages:
     - Py-ART
     
-- title: Sample Cookbook
-  repo: cookbook-template
-  description: |
-    This Project Pythia Cookbook covers ...
-  authors:
-  - name: anon
-  tags:
-    domains:
-    - 
-    packages:
-    - 

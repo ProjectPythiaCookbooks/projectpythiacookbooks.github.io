@@ -1,6 +1,0 @@
-[submodule "site/repos/radar-cookbook"]
-	path = site/repos/radar-cookbook
-	url = https://github.com/ProjectPythiaCookbooks/radar-cookbook.git
-[submodule "site/repos/physical-oceanography-cookbook"]
-	path = site/repos/physical-oceanography-cookbook
-	url = https://github.com/ProjectPythiaCookbooks/physical-oceanography-cookbook.git

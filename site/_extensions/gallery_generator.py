@@ -24,10 +24,8 @@ def _generate_status_badge_html(repo):
     github_url = _generate_github_url_from_repo(repo)
 
     return f"""
-    <p>
     <a class="reference external status-badge" href="{github_url}/actions/workflows/nightly-build.yaml"><img alt="nightly-build" src="{github_url}/actions/workflows/nightly-build.yaml/badge.svg" /></a>
     <a class="reference external status-badge" href="https://binder-staging.2i2c.cloud/v2/gh/ProjectPythiaTutorials/{repo}.git/main"><img alt="Binder" src="https://binder-staging.2i2c.cloud/badge_logo.svg" /></a>
-    </p>
     """
 
 def _generate_sorted_tag_keys(all_items):
