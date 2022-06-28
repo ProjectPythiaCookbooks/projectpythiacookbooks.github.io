@@ -24,8 +24,8 @@ def _generate_status_badge_html(repo):
     github_url = _generate_github_url_from_repo(repo)
 
     return f"""
-    <a class="reference external status-badge" href="{github_url}/actions/workflows/nightly-build.yaml"><img alt="nightly-build" src="{github_url}/actions/workflows/nightly-build.yaml/badge.svg" /></a>
-    <a class="reference external status-badge" href="https://binder-staging.2i2c.cloud/v2/gh/ProjectPythiaTutorials/{repo}.git/main"><img alt="Binder" src="https://binder-staging.2i2c.cloud/badge_logo.svg" /></a>
+    <a class="reference external" href="{github_url}/actions/workflows/nightly-build.yaml"><img alt="nightly-build" src="{github_url}/actions/workflows/nightly-build.yaml/badge.svg" /></a>
+    <a class="reference external" href="https://binder-staging.2i2c.cloud/v2/gh/ProjectPythiaTutorials/{repo}.git/main"><img alt="Binder" src="https://binder-staging.2i2c.cloud/badge_logo.svg" /></a>
     """
 
 def _generate_sorted_tag_keys(all_items):
@@ -106,7 +106,7 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
         tag_list = sorted((itertools.chain(*item['tags'].values())))
         tag_list_f = [tag.replace(' ', '-') for tag in tag_list]
 
-        tags = [f'<span class="badge bg-primary">{tag}</span>' for tag in tag_list_f]
+        tags = [f'<span class="badge bg-primary mybadges">{tag}</span>' for tag in tag_list_f]
         tags = '\n'.join(tags)
 
         tag_class_str = ' '.join(tag_list_f)
@@ -174,10 +174,10 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
 {modal_str}
 
 +++
-<p class="card-footer">
+<div class="tagsandbadges">
 {tags}
 <div{status_badges}</div>
-</p>
+</div>
 
 """
         )

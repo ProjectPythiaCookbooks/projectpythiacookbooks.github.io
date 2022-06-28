@@ -58,14 +58,14 @@ Packages
 
 
 +++
-<p class="card-footer">
-<span class="badge bg-primary">Py-ART</span>
-<span class="badge bg-primary">radar</span>
+<div class="tagsandbadges">
+<span class="badge bg-primary mybadges">Py-ART</span>
+<span class="badge bg-primary mybadges">radar</span>
 <div
-    <a class="reference external status-badge" href="https://github.com/ProjectPythiaCookbooks/radar-cookbook/actions/workflows/nightly-build.yaml"><img alt="nightly-build" src="https://github.com/ProjectPythiaCookbooks/radar-cookbook/actions/workflows/nightly-build.yaml/badge.svg" /></a>
-    <a class="reference external status-badge" href="https://binder-staging.2i2c.cloud/v2/gh/ProjectPythiaTutorials/radar-cookbook.git/main"><img alt="Binder" src="https://binder-staging.2i2c.cloud/badge_logo.svg" /></a>
+    <a class="reference external" href="https://github.com/ProjectPythiaCookbooks/radar-cookbook/actions/workflows/nightly-build.yaml"><img alt="nightly-build" src="https://github.com/ProjectPythiaCookbooks/radar-cookbook/actions/workflows/nightly-build.yaml/badge.svg" /></a>
+    <a class="reference external" href="https://binder-staging.2i2c.cloud/v2/gh/ProjectPythiaTutorials/radar-cookbook.git/main"><img alt="Binder" src="https://binder-staging.2i2c.cloud/badge_logo.svg" /></a>
     </div>
-</p>
+</div>
 
 
 ````
