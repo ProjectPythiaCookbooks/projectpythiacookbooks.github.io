@@ -119,3 +119,7 @@ main.banner-main #project-pythia {
     width: 0px;
   }
   
+p.card-footer {
+  margin-bottom: 0;
+  padding: 0 0;
+}

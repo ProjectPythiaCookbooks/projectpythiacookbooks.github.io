@@ -144,7 +144,6 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
             modal_str = f"""
 <div class="modal">
 <div class="content">
-{status_badges}
 <img src="{thumbnail}" class="modal-img" />
 <h3 class="display-3">{item["title"]}</h3>
 {authors_str}
@@ -175,9 +174,10 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
 {modal_str}
 
 +++
-
+<p class="card-footer">
 {tags}
-
+<div{status_badges}</div>
+</p>
 
 """
         )
