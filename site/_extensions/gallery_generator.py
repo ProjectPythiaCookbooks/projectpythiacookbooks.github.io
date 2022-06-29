@@ -15,9 +15,9 @@ def _generate_github_url_from_repo(repo):
     return github_url
 
 
-#def _get_thumbnail_url(repo):
-#    github_url = _generate_github_url_from_repo(repo)
-#    return f'{github_url}/thumbnail.png'
+def _get_thumbnail_url(repo):
+    github_url = _generate_github_url_from_repo(repo)
+    return f'{github_url}/thumbnail.png'
 
 
 def _generate_status_badge_html(repo):
@@ -95,13 +95,9 @@ def build_from_items(items, filename, title='Gallery', subtitle=None, subtext=No
     panels_body = []
     for item in items:
         repo = item['repo']
-        #thumbnail = _get_thumbnail_url(repo)
+        thumbnail = _get_thumbnail_url(repo)
         cookbook_url = _generate_url_from_repo(repo)
         status_badges = _generate_status_badge_html(repo)
-
-        if not item.get('thumbnail'):
-            item['thumbnail'] = '/_static/images/ebp-logo.png'
-        thumbnail = item['thumbnail']
 
         tag_list = sorted((itertools.chain(*item['tags'].values())))
         tag_list_f = [tag.replace(' ', '-') for tag in tag_list]

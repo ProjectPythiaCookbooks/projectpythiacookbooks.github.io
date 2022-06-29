@@ -4,7 +4,6 @@
     This Project Pythia Cookbook covers the basics of working with weather radar data in Python.
   authors:
   - name: Max Grover
-  thumbnail: _static/images/thumbnails/arm_logo.png
   tags:
     domains:
     - radar
