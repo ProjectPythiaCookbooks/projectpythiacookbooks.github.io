@@ -11,3 +11,16 @@
     packages:
     - Py-ART
     
+- title: CMIP6 Cookbook
+  repo: cmip6-cookbook
+  description: |
+    Examples of analysis of Google Cloud CMIP6 data using Pangeo tools 
+  authors:
+  - name: Ryan Abernathey, Henri Drake
+  thumbnail: _static/images/thumbnails/cmip6-cookbook-thumbnail.png
+  tags:
+    domains:
+    - climate
+    packages:
+    - intake-esm
+    
