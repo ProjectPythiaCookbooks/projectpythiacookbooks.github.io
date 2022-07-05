@@ -14,13 +14,10 @@ title: ''
 labels: 'cookbook-gallery-submission'
 ---
 
-<!-- Please fill out the template below by adding the root name of your Cookbook repository in between the single quotes (''). -->
+<!-- Please fill out the template below by replacing `repo-root-name` with the root name of your Cookbook repository in between the square brackets ([]). -->
 
-Make sure the following items are specified :
-
-- `repo-root-name`
 ---
-repo-root-name: ''
+'  - [repo-root-name]'
 ---
 ```
 
