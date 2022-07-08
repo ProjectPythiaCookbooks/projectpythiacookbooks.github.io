@@ -1,4 +1,4 @@
 # projectpythiatutorials.github.io
-Root site for the ProjectPythiaTutorials GitHub Pages
+Root site for the ProjectPythiaTutorials GitHub Pages:
 
 projectpythiacookbooks.github.io
