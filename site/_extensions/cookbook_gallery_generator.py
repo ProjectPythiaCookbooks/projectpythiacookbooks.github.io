@@ -1,5 +1,4 @@
 import yaml
-from itertools import chain
 from gallery_generator import build_from_repos, generate_menu, generate_repo_dicts
 
 
