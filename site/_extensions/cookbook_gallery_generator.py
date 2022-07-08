@@ -11,7 +11,7 @@ def main(app):
     title = 'Cookbooks Gallery'
 
     subtext = ''
-    with open('cookbook_gallery_subtext.txt') as fid:
+    with open('cookbook_gallery_subtext.md') as fid:
         for line in fid:
             subtext = subtext + line
 
