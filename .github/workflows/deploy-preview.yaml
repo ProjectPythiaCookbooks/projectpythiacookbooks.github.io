@@ -134,4 +134,4 @@ jobs:
           body: |
             ${{ env.comment_message }}
             🔍 Git commit SHA: ${{ steps.find-pull-request.outputs.sha }}
-            ✅ Deployment Preview URL: https://${{ github.repository_owner }}.github.io/${{ steps.repo-name.outputs.value }}/_preview/${{ steps.find-pull-request.outputs.number }}
+            ✅ Deployment Preview URL: https://cookbooks.projectpythia.org/_preview/${{ steps.find-pull-request.outputs.number }}
