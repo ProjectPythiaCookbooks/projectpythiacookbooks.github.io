@@ -1,23 +1,28 @@
-name: preview-site
+name: deploy-preview
 on:
   workflow_run:
     workflows:
-      - deploy-site
+      - trigger-site-build
     types:
       - requested
       - completed
+
 jobs:
   deploy:
-    if: github.repository == 'ProjectPythiaCookbooks/projectpythiacookbooks.github.io'
     runs-on: ubuntu-latest
     defaults:
       run:
-        shell: bash
+        shell: bash -l {0}
     steps:
       - uses: actions/checkout@v3
+      - name: Fetch Repo Name
+        id: repo-name
+        run: echo "::set-output name=value::$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')"  # just the repo name, not owner
+
       - name: Set message value
         run: |
-          echo "comment_message=This pull request is being automatically built with [GitHub Actions](https://github.com/features/actions) and [Netlify](https://www.netlify.com/). To see the status of your deployment, click below." >> $GITHUB_ENV
+          echo "comment_message=👋 Thanks for opening this PR! The site will be automatically built with [GitHub Actions](https://github.com/features/actions). To see the status of your deployment, click below." >> $GITHUB_ENV
+
       - name: Find Pull Request
         uses: actions/github-script@v6
         id: find-pull-request
@@ -26,7 +31,7 @@ jobs:
             let pullRequestNumber = ''
             let pullRequestHeadSHA = ''
             core.info('Finding pull request...')
-            const pullRequests = await github.pulls.list({owner: context.repo.owner, repo: context.repo.repo})
+            const pullRequests = await github.rest.pulls.list({owner: context.repo.owner, repo: context.repo.repo})
             for (let pullRequest of pullRequests.data) {
               if(pullRequest.head.sha === context.payload.workflow_run.head_commit.id) {
                   pullRequestHeadSHA = pullRequest.head.sha
@@ -44,7 +49,8 @@ jobs:
             else{
               core.info(`Found pull request ${pullRequestNumber}, with head sha: ${pullRequestHeadSHA}`)
             }
-      - name: Find Comment
+
+      - name: Find preview comment
         uses: peter-evans/find-comment@v2
         if: steps.find-pull-request.outputs.number != ''
         id: fc
@@ -52,7 +58,8 @@ jobs:
           issue-number: '${{ steps.find-pull-request.outputs.number }}'
           comment-author: 'github-actions[bot]'
           body-includes: '${{ env.comment_message }}'
-      - name: Create comment
+
+      - name: Create preview comment
         if: |
           github.event.workflow_run.conclusion != 'success'
           && steps.find-pull-request.outputs.number != ''
@@ -62,9 +69,10 @@ jobs:
           issue-number: ${{ steps.find-pull-request.outputs.number }}
           body: |
             ${{ env.comment_message }}
+            🔍 Git commit SHA: ${{ steps.find-pull-request.outputs.sha }}
+            ✅ Deployment Preview URL: In Progress
 
-            🚧 Deployment in progress for git commit SHA: ${{ steps.find-pull-request.outputs.sha }}
-      - name: Update comment
+      - name: Update preview comment
         if: |
           github.event.workflow_run.conclusion != 'success'
           && steps.find-pull-request.outputs.number != ''
@@ -75,9 +83,10 @@ jobs:
           edit-mode: replace
           body: |
             ${{ env.comment_message }}
+            🔍 Git commit SHA: ${{ steps.find-pull-request.outputs.sha }}
+            ✅ Deployment Preview URL: In Progress
 
-            🚧 Deployment in progress for git commit SHA: ${{ steps.find-pull-request.outputs.sha }}
-      - name: Download Artifact site
+      - name: Download Artifact Site
         if: |
           github.event.workflow_run.conclusion == 'success'
           && steps.find-pull-request.outputs.number != ''
@@ -85,36 +94,35 @@ jobs:
         uses: dawidd6/action-download-artifact@v2.21.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          workflow: ci.yaml
+          workflow: build-site.yaml
           run_id: ${{ github.event.workflow_run.id }}
-          name: site-zip
-      - name: Unzip site
-        if:  |
-          github.event.workflow_run.conclusion == 'success'
-          && steps.find-pull-request.outputs.number != ''
-          && steps.fc.outputs.comment-id != ''
-        run: |
-          rm -rf ./site/_build/html
-          unzip site.zip
-          rm -f site.zip
-      # Push the site's HTML to Netlify and get the preview URL
-      - name: Deploy to Netlify
+          name: site-zip-${{ steps.find-pull-request.outputs.number }}
+
+      - name: Unzip the site
         if: |
           github.event.workflow_run.conclusion == 'success'
           && steps.find-pull-request.outputs.number != ''
           && steps.fc.outputs.comment-id != ''
-        id: netlify
-        uses: nwtgck/actions-netlify@v1.2
+        run: |
+          rm -rf site/_build/html
+          unzip site.zip
+          rm -f site.zip
+
+      # Push the site's HTML to github-pages
+      # This will be published at /_preview/PRnumber/ relative to the main site
+      - name: Deploy to GitHub pages
+        if: |
+          github.event.workflow_run.conclusion == 'success'
+          && steps.find-pull-request.outputs.number != ''
+          && steps.fc.outputs.comment-id != ''
+        uses: peaceiris/actions-gh-pages@v3.8.0
         with:
-          publish-dir: ./site/_build/html
-          production-deploy: false
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          enable-commit-comment: false
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 5
-      - name: Update site Preview comment
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: site/_build/html
+          enable_jekyll: false
+          destination_dir: _preview/${{ steps.find-pull-request.outputs.number }}
+
+      - name: Finalize preview comment
         if: |
           github.event.workflow_run.conclusion == 'success'
           && steps.find-pull-request.outputs.number != ''
@@ -125,6 +133,5 @@ jobs:
           edit-mode: replace
           body: |
             ${{ env.comment_message }}
-
-            🔍 Git commit SHA:  ${{ steps.find-pull-request.outputs.sha }}
-            ✅ Deployment Preview URL: ${{ steps.netlify.outputs.deploy-url }}
+            🔍 Git commit SHA: ${{ steps.find-pull-request.outputs.sha }}
+            ✅ Deployment Preview URL: https://${{ github.repository_owner }}.github.io/${{ steps.repo-name.outputs.value }}/_preview/${{ steps.find-pull-request.outputs.number }}
