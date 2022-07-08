@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    uses: .github/workflows/build-site.yaml
+    uses: ./.github/workflows/build-site.yaml
     with:
       environment_name: pythia-tutorial-dev
       environment_file: environment.yml
