@@ -17,10 +17,11 @@ def generate_repo_dicts(all_items):
 
     repo_dicts = []
     for item in all_items:
-        github_url = f'https://github.com/ProjectPythiaCookbooks/{item}'
-        cookbook_url = f'https://cookbooks.projectpythia.org/{item}/README.html'
+        repo = item.strip()
+        github_url = f'https://github.com/ProjectPythiaCookbooks/{repo}'
+        cookbook_url = f'https://cookbooks.projectpythia.org/{repo}/README.html'
                 
-        config_url = f'https://raw.githubusercontent.com/ProjectPythiaCookbooks/{item}/main/_config.yml'
+        config_url = f'https://raw.githubusercontent.com/ProjectPythiaCookbooks/{repo}/main/_config.yml'
         config = urllib.request.urlopen(config_url)
         config_dict = yaml.safe_load(config)
 
@@ -30,7 +31,7 @@ def generate_repo_dicts(all_items):
         description = config_dict['description']
         tag_dict = {k: v for k, v in config_dict['tags'].items() if v[0] != None}
 
-        repo_dict = {'repo': item,
+        repo_dict = {'repo': repo,
             'github_url': github_url,
             'cookbook_url': cookbook_url,
             'cookbook_title': cookbook_title,
