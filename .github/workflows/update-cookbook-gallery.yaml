@@ -109,12 +109,20 @@ jobs:
         run: |
           python -m pre_commit run --all-files
           exit 0
+          
+      - name: Get Token
+        id: get_workflow_token
+        uses: ppeter-murray/workflow-application-token-action@v1
+        with:
+          application_id: ${{ secrets.APPLICATION_ID }}
+          application_private_key: ${{ secrets.APPLICATION_PRIVATE_KEY }}
 
       - name: Create pull request
         id: cpr
         uses: peter-evans/create-pull-request@v4
+        env:
+          GITHUB_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'Update cookbook gallery'
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
