@@ -63,8 +63,6 @@ jobs:
 
   create-pull-request:
     needs: validate-user-submission
-    permissions: 
-      pull-requests: write
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -116,7 +114,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v4
         with:
-          repo-token: ${{ secrets.NEW_COOKBOOK_TOKEN }}
+          github_token: ${{ secrets.NEW_COOKBOOK_TOKEN }}
           commit-message: 'Update cookbook gallery'
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
