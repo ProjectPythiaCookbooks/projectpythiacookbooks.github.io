@@ -63,6 +63,8 @@ jobs:
 
   create-pull-request:
     needs: validate-user-submission
+    permissions: 
+      pull-requests: write
     runs-on: ubuntu-latest
     defaults:
       run:
