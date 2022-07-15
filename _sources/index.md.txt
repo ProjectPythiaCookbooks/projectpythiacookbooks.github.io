@@ -22,7 +22,7 @@ Interested in contributing a new Cookbook or contributing to an existing Cookboo
 Domains
 </button>
 <ul class="dropdown-menu" aria-labelledby="domainsDropdown">
-<li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=AWS-cloud onchange="change();">&nbsp;AWS cloud</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=HRRR-model onchange="change();">&nbsp;HRRR model</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=a onchange="change();">&nbsp;a</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=c onchange="change();">&nbsp;c</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=climate onchange="change();">&nbsp;climate</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=e onchange="change();">&nbsp;e</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=i onchange="change();">&nbsp;i</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=l onchange="change();">&nbsp;l</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=m onchange="change();">&nbsp;m</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=oceanography onchange="change();">&nbsp;oceanography</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=packaging onchange="change();">&nbsp;packaging</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=radar onchange="change();">&nbsp;radar</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=t onchange="change();">&nbsp;t</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=visualization onchange="change();">&nbsp;visualization</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=zarr onchange="change();">&nbsp;zarr</label></li>
+<li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=AWS-cloud onchange="change();">&nbsp;AWS cloud</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=HRRR-model onchange="change();">&nbsp;HRRR model</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=climate onchange="change();">&nbsp;climate</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=oceanography onchange="change();">&nbsp;oceanography</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=packaging onchange="change();">&nbsp;packaging</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=radar onchange="change();">&nbsp;radar</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=visualization onchange="change();">&nbsp;visualization</label></li><li><label class="dropdown-item checkbox domains"><input type="checkbox" rel=zarr onchange="change();">&nbsp;zarr</label></li>
 </ul>
 </div>
 
@@ -33,7 +33,7 @@ Domains
 Packages
 </button>
 <ul class="dropdown-menu" aria-labelledby="packagesDropdown">
-<li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=- onchange="change();">&nbsp;-</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=Py-Art onchange="change();">&nbsp;Py-Art</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=a onchange="change();">&nbsp;a</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=cartopy onchange="change();">&nbsp;cartopy</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=dask onchange="change();">&nbsp;dask</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=e onchange="change();">&nbsp;e</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=geocat onchange="change();">&nbsp;geocat</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=holoviews onchange="change();">&nbsp;holoviews</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=i onchange="change();">&nbsp;i</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=intake-esm onchange="change();">&nbsp;intake-esm</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=k onchange="change();">&nbsp;k</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=m onchange="change();">&nbsp;m</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=matplotlib onchange="change();">&nbsp;matplotlib</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=n onchange="change();">&nbsp;n</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=s onchange="change();">&nbsp;s</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=t onchange="change();">&nbsp;t</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=xarray onchange="change();">&nbsp;xarray</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=xgcm onchange="change();">&nbsp;xgcm</label></li>
+<li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=Py-Art onchange="change();">&nbsp;Py-Art</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=cartopy onchange="change();">&nbsp;cartopy</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=dask onchange="change();">&nbsp;dask</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=geocat onchange="change();">&nbsp;geocat</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=holoviews onchange="change();">&nbsp;holoviews</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=intake-esm onchange="change();">&nbsp;intake-esm</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=matplotlib onchange="change();">&nbsp;matplotlib</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=xarray onchange="change();">&nbsp;xarray</label></li><li><label class="dropdown-item checkbox packages"><input type="checkbox" rel=xgcm onchange="change();">&nbsp;xgcm</label></li>
 </ul>
 </div>
 
@@ -50,7 +50,7 @@ Packages
 :footer: p-1
 
 ---
-:column: + tagged-card - a a c e e e i i k l m m n s t t
+:column: + tagged-card climate intake-esm
 
 <div class="d-flex gallery-card">
 <img src="https://raw.githubusercontent.com/ProjectPythiaCookbooks/cesm-lens-aws-cookbook/main/thumbnail.png" class="gallery-thumbnail" />
@@ -65,23 +65,8 @@ Packages
 
 +++
 <div class="tagsandbadges">
-<span class="badge bg-primary mybadges">-</span>
-<span class="badge bg-primary mybadges">a</span>
-<span class="badge bg-primary mybadges">a</span>
-<span class="badge bg-primary mybadges">c</span>
-<span class="badge bg-primary mybadges">e</span>
-<span class="badge bg-primary mybadges">e</span>
-<span class="badge bg-primary mybadges">e</span>
-<span class="badge bg-primary mybadges">i</span>
-<span class="badge bg-primary mybadges">i</span>
-<span class="badge bg-primary mybadges">k</span>
-<span class="badge bg-primary mybadges">l</span>
-<span class="badge bg-primary mybadges">m</span>
-<span class="badge bg-primary mybadges">m</span>
-<span class="badge bg-primary mybadges">n</span>
-<span class="badge bg-primary mybadges">s</span>
-<span class="badge bg-primary mybadges">t</span>
-<span class="badge bg-primary mybadges">t</span>
+<span class="badge bg-primary mybadges">climate</span>
+<span class="badge bg-primary mybadges">intake-esm</span>
 <div
     <a class="reference external" href="https://github.com/ProjectPythiaCookbooks/cesm-lens-aws-cookbook/actions/workflows/nightly-build.yaml"><img alt="nightly-build" src="https://github.com/ProjectPythiaCookbooks/cesm-lens-aws-cookbook/actions/workflows/nightly-build.yaml/badge.svg" /></a>
     <a class="reference external" href="https://binder-staging.2i2c.cloud/v2/gh/ProjectPythiaTutorials/cesm-lens-aws-cookbook.git/main"><img alt="Binder" src="https://binder-staging.2i2c.cloud/badge_logo.svg" /></a>
@@ -96,7 +81,7 @@ Packages
 <img src="https://raw.githubusercontent.com/ProjectPythiaCookbooks/cmip6-cookbook/main/thumbnail.png" class="gallery-thumbnail" />
 <div class="container">
 <a href="https://cookbooks.projectpythia.org/cmip6-cookbook/README.html" class="text-decoration-none"><h4 class="display-4 p-0">CMIP6 Cookbook</h4></a>
-<p class="card-subtitle"><strong>Author:</strong> the <a href="https://projectpythia.org/">Project Pythia</a> Community</p>
+<p class="card-subtitle"><strong>Author:</strong> Ryan Abernathey, Henri Drake, Robert Ford</p>
 <br/>
 <p class="my-2">Examples of analysis of Google Cloud CMIP6 data using Pangeo tools.</p>
 </div>
