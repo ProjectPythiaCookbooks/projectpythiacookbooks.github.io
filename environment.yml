@@ -12,4 +12,3 @@ dependencies:
 - sphinx-panels
 - pip:
   - sphinx-pythia-theme
-  

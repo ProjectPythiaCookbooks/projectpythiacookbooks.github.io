@@ -24,18 +24,18 @@ class IssueInfo:
         return self
 
     def _create_submission_input(self):
-        text = self.data['issue']['body'] 
+        text = self.data["issue"]["body"]
 
         left = "### Root Repository Name"
         right = "###"
-        repo = text[text.index(left)+len(left):text.index(right)].strip()
-        
+        repo = text[text.index(left) + len(left) : text.index(right)].strip()
+
         self.submission = Submission(repo=repo)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
-    issue = IssueInfo(gh_event_path=os.environ['GITHUB_EVENT_PATH']).create_submission()
+    issue = IssueInfo(gh_event_path=os.environ["GITHUB_EVENT_PATH"]).create_submission()
     input = issue.submission.dict()
-    with open('cookbook-submission-input.txt', 'w') as f:
-        f.write(input['repo'])
+    with open("cookbook-submission-input.txt", "w") as f:
+        f.write(input["repo"])

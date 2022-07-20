@@ -17,14 +17,14 @@ import os
 import shutil
 import sys
 
-sys.path.insert(0, os.path.abspath('_extensions'))
+sys.path.insert(0, os.path.abspath("_extensions"))
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'Project Pythia Cookbooks'
+project = "Project Pythia Cookbooks"
 author = 'the <a href="https://projectpythia.org/">Project Pythia</a> Community'
-copyright = '2022'
+copyright = "2022"
 
 # -- General configuration ---------------------------------------------------
 
@@ -32,19 +32,19 @@ copyright = '2022'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'myst_nb',
-    'sphinx_panels',
-    'cookbook_gallery_generator',
+    "myst_nb",
+    "sphinx_panels",
+    "cookbook_gallery_generator",
 ]
 
 # Define what extensions will parse which kind of source file
 source_suffix = {
-    '.ipynb': 'myst-nb',
-    '.myst': 'myst-nb',
+    ".ipynb": "myst-nb",
+    ".myst": "myst-nb",
 }
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -57,15 +57,15 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_pythia_theme'
-html_last_updated_fmt = '%-d %B %Y'
+html_theme = "sphinx_pythia_theme"
+html_last_updated_fmt = "%-d %B %Y"
 
 # Logo & Title
-html_logo = '_static/images/logos/pythia_logo-white-rtext.svg'
-html_title = ''
+html_logo = "_static/images/logos/pythia_logo-white-rtext.svg"
+html_title = ""
 
 # Favicon
-html_favicon = '_static/images/icons/favicon.ico'
+html_favicon = "_static/images/icons/favicon.ico"
 
 # Permalinks Icon
 html_permalinks_icon = '<i class="fas fa-link"></i>'
@@ -73,54 +73,54 @@ html_permalinks_icon = '<i class="fas fa-link"></i>'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
-html_css_files = ['custom.css']
+html_static_path = ["_static"]
+html_css_files = ["custom.css"]
 # html_js_files = ['custom.js']
 
 # Disable Sidebars on special pages
 html_sidebars = {
-    'index': [],
+    "index": [],
 }
 
 # HTML Theme-specific Options
 html_theme_options = {
-    'google_analytics_id': 'G-T52X8HNYE8',
-    'github_url': 'https://github.com/ProjectPythia',
-    'twitter_url': 'https://twitter.com/project_pythia',
-    'icon_links': [
+    "google_analytics_id": "G-T52X8HNYE8",
+    "github_url": "https://github.com/ProjectPythia",
+    "twitter_url": "https://twitter.com/project_pythia",
+    "icon_links": [
         {
-            'name': 'YouTube',
-            'url': 'https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw',
-            'icon': 'fab fa-youtube-square',
-            'type': 'fontawesome',
+            "name": "YouTube",
+            "url": "https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw",
+            "icon": "fab fa-youtube-square",
+            "type": "fontawesome",
         }
     ],
-    'logo_link': 'https://projectpythia.org',
-    'navbar_links': [
-        {'name': 'Home', 'url': 'https://projectpythia.org'},
-        {'name': 'Foundations', 'url': 'https://foundations.projectpythia.org'},
-        {'name': 'Cookbooks', 'url': 'https://cookbooks.projectpythia.org/'},
-        {'name': 'Resources', 'url': 'https://projectpythia.org/resource-gallery.html'},
-        {'name': 'Community', 'url': 'https://projectpythia.org/#join-us'},
+    "logo_link": "https://projectpythia.org",
+    "navbar_links": [
+        {"name": "Home", "url": "https://projectpythia.org"},
+        {"name": "Foundations", "url": "https://foundations.projectpythia.org"},
+        {"name": "Cookbooks", "url": "https://cookbooks.projectpythia.org/"},
+        {"name": "Resources", "url": "https://projectpythia.org/resource-gallery.html"},
+        {"name": "Community", "url": "https://projectpythia.org/#join-us"},
     ],
-    'page_layouts': {
-        'index': 'page-standalone.html',
+    "page_layouts": {
+        "index": "page-standalone.html",
     },
-    'footer_logos': {
-        'NCAR': '_static/images/logos/NCAR-contemp-logo-blue.svg',
-        'Unidata': '_static/images/logos/Unidata_logo_horizontal_1200x300.svg',
-        'UAlbany': '_static/images/logos/UAlbany-A2-logo-purple-gold.svg',
+    "footer_logos": {
+        "NCAR": "_static/images/logos/NCAR-contemp-logo-blue.svg",
+        "Unidata": "_static/images/logos/Unidata_logo_horizontal_1200x300.svg",
+        "UAlbany": "_static/images/logos/UAlbany-A2-logo-purple-gold.svg",
     },
-    'extra_navbar': ('Theme by <a href="https://projectpythia.org">Project Pythia</a>'),
+    "extra_navbar": ('Theme by <a href="https://projectpythia.org">Project Pythia</a>'),
 }
 
 # Panels config
 panels_add_bootstrap_css = False
 
 # MyST config
-myst_enable_extensions = ['amsmath', 'colon_fence', 'deflist', 'html_image']
-myst_url_schemes = ['http', 'https', 'mailto']
-jupyter_execute_notebooks = 'off'
+myst_enable_extensions = ["amsmath", "colon_fence", "deflist", "html_image"]
+myst_url_schemes = ["http", "https", "mailto"]
+jupyter_execute_notebooks = "off"
 myst_heading_anchors = 3
 
 # CUSTOM SCRIPTS ==============================================================

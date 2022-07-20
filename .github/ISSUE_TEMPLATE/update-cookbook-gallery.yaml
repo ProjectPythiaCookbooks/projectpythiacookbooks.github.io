@@ -2,14 +2,14 @@ name: Update Cookbook Gallery
 description: For submitting a new Cookbook repository for acceptance into the gallery
 title: 'Update Gallery with new Cookbook'
 labels: ['content', 'cookbook-gallery-submission']
-assignees: 
+assignees:
   - ProjectPythiaCookbooks/education
 
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for your contribution to the Project Pythia Cookbook Gallery! 
+        Thank you for your contribution to the Project Pythia Cookbook Gallery!
   - type: input
     id: root-repo-name
     attributes:
@@ -25,10 +25,9 @@ body:
       multiple: true
       options:
         - 'yes'
-        - 'no'       
+        - 'no'
   - type: textarea
     id: comments
     attributes:
       label: Additional comments
       description: Please add any additional comments on this issue here.
-      
