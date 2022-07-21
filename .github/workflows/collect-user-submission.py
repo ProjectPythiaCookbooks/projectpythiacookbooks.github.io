@@ -27,7 +27,7 @@ class IssueInfo:
         text = self.data['issue']['body'] 
 
         left = "### Root Repository Name"
-        right = "###"
+        right = "### Did you check"
         repo = text[text.index(left)+len(left):text.index(right)].strip()
         
         self.submission = Submission(repo=repo)
