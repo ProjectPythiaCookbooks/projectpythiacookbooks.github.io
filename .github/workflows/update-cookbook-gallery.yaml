@@ -123,7 +123,6 @@ jobs:
           body: |
             Update cookbook gallery as requested in #${{ github.event.issue.number }}. Closes #${{ github.event.issue.number }}.
           token: ${{ secrets.PAT }}
-          repository: ProjectPythiaCookbooks/projectpythiacookbooks.github.io
           branch: upstream-changes
 
       - name: Find Comment
