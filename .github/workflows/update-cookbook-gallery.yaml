@@ -123,7 +123,7 @@ jobs:
           body: |
             Update cookbook gallery as requested in #${{ github.event.issue.number }}. Closes #${{ github.event.issue.number }}.
           token: ${{ secrets.PAT }}
-          branch: upstream-changes
+          branch: cookbook-gallery-${{ github.event.issue.number }}
 
       - name: Find Comment
         uses: peter-evans/find-comment@v1
