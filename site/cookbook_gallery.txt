@@ -6,3 +6,4 @@ packaging-cookbook
 physical-oceanography-cookbook
 radar-cookbook
 xgcm-cookbook
+intake-cookbook
